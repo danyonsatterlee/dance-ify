@@ -11,7 +11,7 @@ class Login extends Component {
     return (
       <div className="login">
         <h2>Here's our login page!</h2>
-      <a href="/login"> <img src={loginSVG}></img> </a>
+      <a href="http://localhost:8080/login"> <img src={loginSVG}></img> </a>
       </div>
     );
   }

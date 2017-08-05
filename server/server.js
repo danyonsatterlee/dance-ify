@@ -14,7 +14,7 @@ app.use(cors());
 
 
 app.use("/danceify",danceRouter);
-app.use("/login",loginRouter);
+app.use(loginRouter);
 
 app.listen(port,()=>{
     console.log(`listening to ${port}`)
