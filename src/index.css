@@ -4,10 +4,7 @@ body {
   font-family: sans-serif;
 }
 
-body{
-  background-color: rgb(28.4%, 28.4%, 28.4%);
 
-}
 
 .results{
   display:flex;
@@ -27,10 +24,10 @@ height:100vh;
 .btn-custom{
   background-color:transparent;
   border-radius:45px;
-  border-color:white;
+  border-color:black;
   border-width: 2px;
   border-style: solid;
-  color:white;
+  /*color:white;*/
   font-family: 'Open Sans', sans-serif;
   padding-left: 30px;
   padding-right:30px;
@@ -42,9 +39,9 @@ box-shadow: 28px 14px 25px -9px rgba(0,0,0,0.75);
 
 input{
   background-color: transparent;
-  color: white;
+  /*color: white;*/
     border-radius:45px;
-  border-color:white;
+  /*border-color:white;*/
   border-width: 2px;
   border-style: solid;
   font-family: 'Open Sans', sans-serif;
@@ -56,8 +53,36 @@ box-shadow: 28px 14px 25px -9px rgba(0,0,0,0.75);
 }
 
 h1{
-    color:white !important;
+    
     font-family: 'Archivo Black', sans-serif !important;
     font-size: 5em;
+   
+}
+
+.login-main{
+   margin-top: 35vh;
+}
+
+h3{
+    font-family: 'Archivo Black', sans-serif !important;
+
+}
+.party{
+  margin-top:30vh;
+}
+.login-sub{
+font-family: 'Open Sans', sans-serif;
+}
+
+.login-icon{
+max-width: 400px;
+margin-top: 38vh;
+transition: .5s;
+
+
+}
+
+.login-icon:hover{
+ transform: scale(1.1)
 }
 

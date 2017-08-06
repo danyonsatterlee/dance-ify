@@ -2,6 +2,7 @@ let mongoose = require("mongoose");
 const express = require("express");
 let bodyParser = require("body-parser");
 let cors = require("cors");
+let path = require("path");
 
 let danceRouter = require("./routes/dance.js");
 let loginRouter = require("./routes/login.js");
@@ -15,6 +16,9 @@ app.use(cors());
 
 app.use("/danceify",danceRouter);
 app.use(loginRouter);
+
+//setup static files
+app.use(express.static(path.resolve(__dirname, "..", "build")));
 
 app.listen(port,()=>{
     console.log(`listening to ${port}`)
