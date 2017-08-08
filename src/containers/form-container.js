@@ -3,6 +3,8 @@ import Form from "../components/form.js";
 import * as actionCreators from "../actions/";
 import { connect } from "react-redux";
 import autoBind from "react-autobind";
+
+
 class FormCon extends React.Component {
     constructor(props) {
         super(props);
@@ -20,8 +22,9 @@ class FormCon extends React.Component {
     render() {
         return (
             <div className="col-md-6">
-                <div className="results">
-                    <Form input={this.state} handleTrack={this.props.getTrack} handleChange={this.handleChange} accessToken={this.props.accessToken}></Form>
+                <div className="search">
+                    <Form input={this.state} handleId={this.props.getId} handleChange={this.handleChange} accessToken={this.props.accessToken} ></Form>
+                 
                 </div>
             </div>
         );

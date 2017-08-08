@@ -81,6 +81,29 @@ danceRouter.delete("/:_id", (req,res)=>{
    });
 });
 
+//return Danceability outcomes
+// danceRouter.put("/danceable/:_id", (req,res)=>{
+//     Dance.findOne({"_id": req.params._id}, (err,data)=>{
+//         if(err){
+//             res.status(500).send({"message": "Error on server", err});
+//         } else if(data===null){
+//             res.status(404).send({"message": `Item with id of ${req.params._id} was not found`})
+//         } else{
+//             data.upvotes +=1;
+//             data.save((err, data)=>{
+//                 if(err){
+//                     res.status(500).send({"message": "Error on server", err});
+//                 } else{
+//                     res.status(200).send({"message": "Success your data has been updated", data});
+
+//                 }
+//             });
+
+//         }
+//     })
+
+// });
+
 
 
 module.exports = danceRouter;

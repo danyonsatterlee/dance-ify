@@ -38,14 +38,63 @@ export function setData(data){
 }
 
 
-export function getTrack(track,accessToken){
+export function getId(track,accessToken){
   return(dispatch)=>{
     return axios.get(`https://api.spotify.com/v1/search?q=track:${track}&type=track`, {headers: {"Authorization": `Bearer ${accessToken}`}}).then((response)=>{
-      console.log(response.data);
-      dispatch(setData(response.data))
+      console.log(response.data.tracks.items[0].id);
+      // console.log(response.data.tracks.items[0].images[1].url)
+      dispatch(getDance(response.data.tracks.items[0].id, accessToken))
+       dispatch(setData())
+       
     }).catch((error)=>{
             throw error;
         });
     }
 
 }
+
+
+export function getDance(id,accessToken){
+  return(dispatch)=>{
+    return axios.get(`https://api.spotify.com/v1/audio-features/${id}`, {headers: {"Authorization": `Bearer ${accessToken}`}}).then((response)=>{
+      console.log(response.data.danceability)
+      let howDance= response.data.danceability;
+      // if(howDance>0 && howDance<.4){
+      //    dispatch(getNoDance(howDance, accessToken));
+       
+    
+
+      // } else if(howDance>=.4 && howDance< .7){
+      //   dispatch(getSlowDance(howDance, accessToken));
+        
+
+      // } else if(howDance<=.7 && howDance<=1.0){
+      //   dispatch(getVeryDance(howDance, accessToken));
+
+      // }
+   
+      dispatch(setDanceLevel(howDance))
+    }).catch((error)=>{
+            throw error;
+        });
+    }
+}
+
+export function setDanceLevel(level){
+  return {type: "SET_DANCE_LEVEL", level}
+
+}
+
+// export function loadDanceData(){
+//     return(dispatch)=>{
+//         return axios.get("http://localhost:8080/dance").then((reponse)=>{
+//             dispatch(setData(reponse.data.data))
+//         }).catch((error)=>{
+//             throw error;
+//         });
+//     }
+
+// }
+
+
+

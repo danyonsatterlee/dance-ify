@@ -15,7 +15,8 @@ let defaultState = {
     product: null,
     type: null,
     uri: null
-  }
+  },
+  danceLevel: null
 }
 // if i want multiple songs make track an array and look at the socket.io reducers as an example
 
@@ -42,7 +43,11 @@ const mainReducer = (state = defaultState, action) => {
   } else if (action.type === "SPOTIFY_ME_FAILURE") {
     return state;
 
-  } else {
+  } else if(action.type==="SET_DANCE_LEVEL"){
+    return {...state,
+    danceLevel: action.level}
+
+    }else {
     return {
       ...state
     }

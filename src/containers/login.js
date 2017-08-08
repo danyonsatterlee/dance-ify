@@ -8,6 +8,7 @@ import loginSVG from '../login.png';
 class Login extends Component {
   render() {
     return (
+      <div className="wrapper">
       <div className="container">
         <div className="row">
           <div className="col-md-5 col-md-offset-1">
@@ -26,6 +27,7 @@ class Login extends Component {
        
           </div>
         </div>
+      </div>
       </div>
     );
   }
