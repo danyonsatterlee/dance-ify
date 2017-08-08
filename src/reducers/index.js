@@ -2,6 +2,7 @@ let defaultState = {
   accessToken: null,
   refreshToken: null,
   track: {},
+  playlist:[],
   user: {
     loading: false,
     country: null,
@@ -26,7 +27,16 @@ const mainReducer = (state = defaultState, action) => {
       ...state,
       track: action.data
     }
-  } else if (action.type === "SPOTIFY_TOKENS") {
+  } else if(action.type === "SET_PLAYLIST"){
+    return{
+      ...state,
+      playlist: action.playlist
+    }
+
+  }
+  
+  
+  else if (action.type === "SPOTIFY_TOKENS") {
     const {accessToken, refreshToken} = action;
     console.log(accessToken);
     return Object.assign({}, state, {accessToken, refreshToken});

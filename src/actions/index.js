@@ -41,10 +41,12 @@ export function setData(data){
 export function getId(track,accessToken){
   return(dispatch)=>{
     return axios.get(`https://api.spotify.com/v1/search?q=track:${track}&type=track`, {headers: {"Authorization": `Bearer ${accessToken}`}}).then((response)=>{
-      console.log(response.data.tracks.items[0].id);
-      // console.log(response.data.tracks.items[0].images[1].url)
+      console.log(response.data.tracks.items[0]);
+      console.log(response.data.tracks.items[0].uri)
+      // console.log(response.data.tracks.items[0].album.images[0].url)
       dispatch(getDance(response.data.tracks.items[0].id, accessToken))
-       dispatch(setData())
+      dispatch(setData(response.data.tracks.items[0], accessToken))
+    
        
     }).catch((error)=>{
             throw error;
@@ -57,21 +59,9 @@ export function getId(track,accessToken){
 export function getDance(id,accessToken){
   return(dispatch)=>{
     return axios.get(`https://api.spotify.com/v1/audio-features/${id}`, {headers: {"Authorization": `Bearer ${accessToken}`}}).then((response)=>{
-      console.log(response.data.danceability)
+      // console.log(response.data.danceability)
       let howDance= response.data.danceability;
-      // if(howDance>0 && howDance<.4){
-      //    dispatch(getNoDance(howDance, accessToken));
-       
-    
-
-      // } else if(howDance>=.4 && howDance< .7){
-      //   dispatch(getSlowDance(howDance, accessToken));
-        
-
-      // } else if(howDance<=.7 && howDance<=1.0){
-      //   dispatch(getVeryDance(howDance, accessToken));
-
-      // }
+      
    
       dispatch(setDanceLevel(howDance))
     }).catch((error)=>{
@@ -84,6 +74,51 @@ export function setDanceLevel(level){
   return {type: "SET_DANCE_LEVEL", level}
 
 }
+
+
+export function getPlaylists(accessToken){
+  // console.log(accessToken)
+  return(dispatch)=>{
+    axios.get(`https://api.spotify.com/v1/me/playlists`, {headers: {"Authorization": `Bearer ${accessToken}`}}).then((response)=>{
+
+      dispatch(setPlaylist(response.data.items))
+      
+       
+    }).catch((error)=>{
+            throw error;
+        });
+    }
+
+}
+
+export function setPlaylist(playlist){
+    return{
+        type:"SET_PLAYLIST",
+        playlist
+    }
+}
+
+export function addToPlayList(url,track, accessToken){
+  console.log(accessToken)
+  return(dispatch)=>{
+    axios.post(url+"/"+track, {headers: {"Authorization": `Bearer ${accessToken}`}}).then((response)=>{
+      
+     console.log(response.data)
+      dispatch(()=>{})
+       
+    }).catch((error)=>{
+            throw error;
+        });
+    }
+
+}
+
+https://api.spotify.com/v1/users/129074631/playlists/4KRonHnZ7GmUCfaC2MIY7h/spotify:track:6dGnYIeXmHdcikdzNNDMm2
+
+
+
+
+
 
 // export function loadDanceData(){
 //     return(dispatch)=>{

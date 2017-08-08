@@ -68,6 +68,10 @@ h3{
     font-family: 'Archivo Black', sans-serif !important;
 
 }
+
+.album{
+  max-width: 300px;
+}
 .party{
   margin-top:30vh;
 }
@@ -101,4 +105,10 @@ h2{
 p{
   color:white;
   font-family: 'Open Sans', sans-serif;
+}
+
+
+.playlist-img{
+  max-height:200px;
+  display: inline-block;
 }
