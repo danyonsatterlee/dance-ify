@@ -1,21 +1,29 @@
 import React from "react";
 let FontAwesome = require('react-fontawesome');
+// import WOW from 'wowjs';
 class Playlist extends React.Component{
+// ComponentDidMount(){
+//     new WOW.WOW().init;
+// }
 
     render(){
        console.log(this.props.track.uri)
         return(
-<div>
+<div className="col-md-12 playlist-bottom " data-wow-offset="70" data-wow-iteration="1">
+     <div className="col-md-2 col-md-offset-3 ">
     <img className="playlist-img" src={this.props.playlist.images[0].url}/> 
-    <h4>{this.props.playlist.name}</h4>
-    <p onClick={()=>{this.props.handleSong(this.props.playlist.href, this.props.track.uri, this.props.accessToken)}}>Add Song to Playlist  <FontAwesome
-        className='super-crazy-colors'
+    </div>
+    <div className="col-md-7">
+    <h4 className="artist-name">{this.props.playlist.name}</h4>
+    <button className="add-to-playlist-2"onClick={()=>{this.props.handleSong(this.props.playlist.href, this.props.track.uri, this.props.accessToken)}}>Add Song to Playlist  <FontAwesome
+       
         name='plus-circle'
         size='1x'
         inverse
        
-      /></p>
-      
+      /></button>
+      </div>
+      <hr/>
     
 </div>
         );

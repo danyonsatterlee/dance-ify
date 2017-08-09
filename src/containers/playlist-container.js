@@ -8,9 +8,11 @@ class PlaylistCon extends React.Component {
     
     render() {
         return (
-         
+         <div className="row">
+        
+     
                     <PlaylistMap  track={this.props.track} handleSong={this.props.addToPlayList} playlist={this.props.playlist} accessToken={this.props.accessToken} ></PlaylistMap>
-          
+              </div>
         );
     }
 }

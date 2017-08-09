@@ -15,6 +15,7 @@ class PlaylistMap extends React.Component {
     render() {
         return (
             <div>
+               
                 {this.genPlaylistMap()}
 
             </div>
