@@ -21,10 +21,11 @@ class FormCon extends React.Component {
 
     render() {
         return (
-            <div className="col-md-6">
+            <div className="row">
+            <div className="col-md-5 col-md-offset-7">
                 <div className="search">
                     <Form input={this.state} handleId={this.props.getId} handleChange={this.handleChange} accessToken={this.props.accessToken} ></Form>
-                 
+                 </div>
                 </div>
             </div>
         );

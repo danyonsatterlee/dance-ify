@@ -101,7 +101,7 @@ export function setPlaylist(playlist){
 export function addToPlayList(url,track, accessToken){
   console.log(accessToken)
   return(dispatch)=>{
-    axios.post(url+"/"+track, {headers: {"Authorization": `Bearer ${accessToken}`}}).then((response)=>{
+    axios.post(url+"/tracks?uris="+track, null, {headers: {"Authorization": `Bearer ${accessToken}`}}).then((response)=>{
       
      console.log(response.data)
       dispatch(()=>{})
@@ -113,7 +113,6 @@ export function addToPlayList(url,track, accessToken){
 
 }
 
-https://api.spotify.com/v1/users/129074631/playlists/4KRonHnZ7GmUCfaC2MIY7h/spotify:track:6dGnYIeXmHdcikdzNNDMm2
 
 
 

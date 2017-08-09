@@ -1,7 +1,7 @@
 import React from "react";
 import FormCon from "./form-container.js"
 import ImageCon from './image-container.js';
-// import ResultCon from "./result-container.js";
+import ResultCon from "./result-container.js";
 import PlaylistCon from "./playlist-container.js"
 import {connect} from 'react-redux';
 import * as actionCreators from '../actions/index.js';
@@ -21,9 +21,13 @@ class Home extends React.Component {
           
             <div className="container">
                 <div className="row">
-                    <ImageCon></ImageCon>
+                      <div className="col-md-12">
+                          <div className="fill"></div>
+                      </div>
+                    {/*<ImageCon></ImageCon>*/}
                     <FormCon></FormCon>
-                    {/*<ResultCon></ResultCon>*/}
+                    <ResultCon></ResultCon>
+                  
                     <PlaylistCon></PlaylistCon>
                     
                 </div>

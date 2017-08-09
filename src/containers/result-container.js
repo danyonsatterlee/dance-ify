@@ -9,9 +9,9 @@ class ResultCon extends React.Component {
     
     render() {
         return (
-    
+    <div className="row">
                     <Result accessToken={this.props.accessToken} handleGetPlaylist={this.props.getPlaylists} track={this.props.track} danceLevel={this.props.danceLevel} ></Result>
-          
+          </div>
        
         );
     }
