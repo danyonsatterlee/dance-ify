@@ -118,17 +118,3 @@ export function addToPlayList(url,track, accessToken){
 
 
 
-
-// export function loadDanceData(){
-//     return(dispatch)=>{
-//         return axios.get("http://localhost:8080/dance").then((reponse)=>{
-//             dispatch(setData(reponse.data.data))
-//         }).catch((error)=>{
-//             throw error;
-//         });
-//     }
-
-// }
-
-
-
