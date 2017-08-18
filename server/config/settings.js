@@ -1,3 +1,3 @@
 module.exports={
-    db: "mongodb://localhost/danceify"
+    db: "mongodb://danyon-danceify:thisside27@localhost/danceify"
 }

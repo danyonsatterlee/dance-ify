@@ -21,7 +21,7 @@ class Login extends Component {
 
           </div>
           <div className="col-md-5 col-md-offset-1">
-            <a href="http://localhost:8080/login">
+            <a href="http://dance-ify.com/login">
               <img className="login-icon " src={loginSVG}></img>
             </a>
        
